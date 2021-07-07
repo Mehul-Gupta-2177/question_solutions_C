@@ -14,11 +14,14 @@
 using namespace std;
 
 int main() {
-    int n = 20;
+    int n = 1000;
+    // makes a hashmap
     unordered_map<int, vector< pair<int, int> > > hashmap;
+    // gets all the pairs
     for(int c = 0; c < n; c++){
         for (int d = 0; d < n; d++){
             int result = pow(c,3) + pow(d,3);
+            // makes the pairs and pushes them into a vector using result as a keys
             pair<int, int> temp;
             temp.first = c;
             temp.second = d;
@@ -30,7 +33,6 @@ int main() {
         for (int b = 0; b < n; b++){
             int result = pow(a,3) + pow(b,3);
             vector< pair<int, int> > temp_vec = hashmap[result];
-
             for(int i = 0; i < int(temp_vec.size()); i++){
                 cout << a << "," << b << "," << temp_vec[i].first << "," <<  temp_vec[i].second<<endl;
             }
